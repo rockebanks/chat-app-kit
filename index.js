@@ -16,12 +16,9 @@ import Svg, {Circle,Ellipse,G,TSpan,TextPath,Path,Polygon,Polyline,Line,Rect,Use
 import LocalizedStrings from 'react-native-localization';
 import RNIdle from 'react-native-idle';
 import {LivePlayer} from "react-native-dbb-rtmp";
-import * as Sentry from '@sentry/react-native';
 const {ScrollableTabBar} = ScrollableTabView;
 const {View,Image}  = RNKit;
-Sentry.init({ 
-    dsn: 'https://c7ae4ca91093490b804738da406be0e0@o388939.ingest.sentry.io/5226463',
-});
+
 module.exports = { 
     Navigation,
     NavUtils,
