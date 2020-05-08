@@ -361,8 +361,6 @@ var Chat = {
     },
     /**
      * 获取充值
-     * data 返回空
-     * error:{code,message}
      */
     requestCharge:function(cid) {
         return new Promise(function(resolve,reject) {
