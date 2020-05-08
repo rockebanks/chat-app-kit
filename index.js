@@ -18,6 +18,10 @@ import RNIdle from 'react-native-idle';
 import {LivePlayer} from "react-native-dbb-rtmp";
 const {ScrollableTabBar} = ScrollableTabView;
 const {View,Image}  = RNKit;
+import * as Sentry from '@sentry/react-native';
+Sentry.init({ 
+  dsn: 'https://c7ae4ca91093490b804738da406be0e0@o388939.ingest.sentry.io/5226463', 
+});
 
 module.exports = { 
     Navigation,
