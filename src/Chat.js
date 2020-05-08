@@ -359,6 +359,29 @@ var Chat = {
             }
         }); 
     },
+    /**
+     * 获取充值
+     * data 返回空
+     * error:{code,message}
+     */
+    requestCharge:function(cid) {
+        return new Promise(function(resolve,reject) {
+
+            if(isIos){
+                NativeModules.NativeKit.requestCharge(cid+"").then(data=>{
+                    resolve(data);
+                }).catch(({code,message})=>{
+                    reject({code,msg:message});
+                });
+            }else{
+                NativeModules.NativeKit.requestCharge(cid+"",(data)=>{
+                    resolve(data);
+                },(code,msg)=>{
+                    reject({code,msg});
+                });
+            }
+        }); 
+    },
 
     /**
      * 请求支付

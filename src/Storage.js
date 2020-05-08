@@ -36,6 +36,23 @@ var Storage = {
             }
             
         });
+    },
+    del:function(key){
+        return new Promise(function(resolve,reject) {
+            if(isIos){
+                NativeModules.NativeKit.storeDel(key).then(value=>{
+                    resolve(value);
+                },(code,message)=>{
+                    reject({code,msg:message});
+                });
+            }else{
+                NativeModules.NativeKit.storeDel(key,(data)=>{
+                    resolve(data);
+                },(code,msg)=>{
+                    reject({code,msg});
+                });
+            }
+        });
     }
 }
 
