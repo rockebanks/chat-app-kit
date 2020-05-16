@@ -17,7 +17,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.get('/check', (req, res) => {
-    res.send(buildversion);
+    res.send({version:buildversion});
 });
 app.post('/log', (req, res) => {
     var tag = req.body.tag;
